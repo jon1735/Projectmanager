@@ -1,0 +1,9 @@
+<h1> List of All Available Contractors </h1>
+
+<ul>
+  <% @contractors.each do |contractor|%>
+    <li>
+      <%= link_to contractor.name, contractor_path(contractor)%>
+    </li>
+  <% end %>
+</ul>
