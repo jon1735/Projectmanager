@@ -1,3 +1,5 @@
+
+
 class PropertiesController < ApplicationController
   def index
     @properties = Property.all
@@ -5,5 +7,25 @@ class PropertiesController < ApplicationController
 
   def show
     @property = Property.find(params[:id])
+  end
+
+  def new
+    @property = Property.new
+  end
+
+  def create
+    @property = Property.new(property_params)
+  
+    if @property.save
+      redirect_to @property
+    else 
+      render :new
+    end
+  end
+  
+  private
+
+  def property_params
+    params.require(:property).permit(:address, :vacancy, :lawn_care, :plumbing, :electrical, :realtor_id, :contractor_id)
   end
 end

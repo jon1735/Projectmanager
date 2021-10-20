@@ -1,0 +1,46 @@
+<h1>New Property Form</h1>
+
+<%= form_for(@property) do |form|%>
+
+<label> Property Address: </label>
+  <%= form.text_area :address%>
+
+<br>
+
+<label> Is the Property Vacant? </label>
+  Yes<%= form.radio_button :vacancy, true%>
+  No<%= form.radio_button :vacancy, false%>
+  
+
+<br>
+<h3>Please assign this property to a realty team </h3>
+<%= form.collection_select :realtor_id, Realtor.all, :id, :name%>
+
+<br>
+
+<h3>Please assign this property to a contractor team </h3>
+<%= form.collection_select :contractor_id, Contractor.all, :id, :name%>
+
+<br>
+<br>
+
+<h3> Post inspection work list:</h3>
+
+<label> Work order for the lawn: </label>
+<%= form.text_area :lawn_care%>
+
+<br>
+
+<label> Work order for the plumbing: </label>
+<%= form.text_area :plumbing%>
+
+<br>
+
+<label> Work order for the electrical: </label>
+<%= form.text_area :electrical%>
+
+<br>
+
+<%= form.submit%>
+
+<% end %>
