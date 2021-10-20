@@ -1,0 +1,9 @@
+<h1> List of Available Realtors:</h1>
+
+<ul>
+  <% @realtors.each do |realtor|%>
+    <li>
+      <%= link_to realtor.name, realtor_path(realtor)%>
+    </li>
+  <% end %>
+</ul>
