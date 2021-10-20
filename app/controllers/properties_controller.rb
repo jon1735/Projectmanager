@@ -15,12 +15,17 @@ class PropertiesController < ApplicationController
 
   def create
     @property = Property.new(property_params)
-  
     if @property.save
       redirect_to @property
     else 
       render :new
     end
+  end
+  
+  def destroy
+    @property = Property.find(params[:id])
+    @property.destroy
+    redirect_to properties_path
   end
   
   private
