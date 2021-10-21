@@ -21,6 +21,19 @@ class PropertiesController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @property = Property.find(params[:id])
+  end
+
+  def update
+    @property = Property.find(params[:id])
+    if @property.update(property_params)
+      redirect_to @property
+    else
+      render :edit
+    end
+  end
   
   def destroy
     @property = Property.find(params[:id])

@@ -1,0 +1,21 @@
+<%= form_for @property do |form| %>
+  <%= form.label 'Property Address' %><br>
+  <%= form.text_field :address %><br>
+
+  <%= form.label 'Vacancy' %><br>
+  Yes<%= form.radio_button :vacancy, true%>
+  No<%= form.radio_button :vacancy, false%><br>
+
+  <%= form.label 'Lawn Care' %><br>
+  <%= form.text_area :lawn_care %><br>
+
+  <%= form.label 'Plumbing' %><br>
+  <%= form.text_area :plumbing %><br>
+
+  <%= form.label 'Electrical' %><br>
+  <%= form.text_area :electrical %><br>
+
+  <%= form.submit "Submit Update" %>
+<% end %>
+
+
