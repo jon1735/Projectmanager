@@ -2,4 +2,8 @@
 
 <br>
 
-<h2>List of Manageable Properties: </h2>
+<h2>List of Properties Currently Managed: </h2>
+
+<% @realtor.properties.each do |property|%>
+  <%= link_to property.address, property_path(property)%>
+  <% end %>

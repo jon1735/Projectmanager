@@ -15,3 +15,11 @@
 <br>
 
 <h3>Electrical Work: <%= @contractor.electrical %></h3>
+
+<br>
+
+<h2> List of Properties Currently Managed: </h2>
+
+<% @contractor.properties.each do |property|%>
+  <%= link_to property.address, property_path(property)%>
+  <% end %>

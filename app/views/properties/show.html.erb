@@ -6,6 +6,18 @@
 
 <br>
 
+<h3> Realty Team Managing Property: </h3>
+
+  <%= link_to @property.realtor.name, realtor_path(@property.realtor)%>
+
+<br>
+
+<h3> Contractor Team Managing Property: </h3>
+
+  <%= link_to @property.contractor.name, contractor_path(@property.contractor)%>
+
+<br>
+
 <h2> Work description:</h2>
 
 <br>
