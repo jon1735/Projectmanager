@@ -1,46 +1,67 @@
+<main>
 <h1 class="text-center">New Property Form</h1>
+
+<br>
 
 <%= form_for(@property) do |form|%>
 
-<h6> Property Address: </h6>
+<div class="text-center">
+<h6> Please Enter Property Address: </h6>
   <%= form.text_area :address%>
+</div>
 
 <br>
 
+<div class="text-center">
 <h6> Is the Property Vacant? </h6>
   Yes<%= form.radio_button :vacancy, true%>
   No<%= form.radio_button :vacancy, false%>
-  
+</div>  
 
 <br>
+
+<div class="text-center">
 <h3>Please assign this property to a realty team </h3>
 <%= form.collection_select :realtor_id, Realtor.all, :id, :name%>
+</div>
 
 <br>
 
+<div class="text-center">
 <h3>Please assign this property to a contractor team </h3>
 <%= form.collection_select :contractor_id, Contractor.all, :id, :name%>
+</div>
 
 <br>
 <br>
 
+<div class="text-center">
 <h3> Post inspection work list:</h3>
+</div>
 
+<div class="text-center">
 <h6> Work order for the lawn: </h6>
 <%= form.text_area :lawn_care%>
+</div>
 
 <br>
 
+<div class="text-center">
 <h6> Work order for the plumbing: </h6>
 <%= form.text_area :plumbing%>
+</div>
 
 <br>
 
+<div class="text-center">
 <h6> Work order for the electrical: </h6>
 <%= form.text_area :electrical%>
-
+</div>
 <br>
 
+<div class="text-center">
 <%= form.submit%>
+</div>
 
+</main>
 <% end %>
