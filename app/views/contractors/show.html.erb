@@ -1,25 +1,33 @@
-<h1><%= @contractor.name%></h1>
+<div class="text-center px-5 mx-5">  
+
+<h1 style="color: white"><%= @contractor.name%></h1>
 
 <br>
 
-<h2> Contractor Field Specialty </h2>
+<h2 style="color: white"> Contractor Field Specialty </h2>
 
 <br>
 
-<h3>Lawn Care: <%= @contractor.lawn_care %></h3>
+
+<h3 style="color: white">Lawn Care: <%= @contractor.lawn_care %></h3>
 
 <br>
 
-<h3>Plumbing Work: <%= @contractor.plumbing %></h3>
+<h3 style="color: white">Plumbing Work: <%= @contractor.plumbing %></h3>
 
 <br>
 
-<h3>Electrical Work: <%= @contractor.electrical %></h3>
+<h3 style="color: white">Electrical Work: <%= @contractor.electrical %></h3>
 
 <br>
+<h2 style="color: white"> List of Properties Currently Managed: </h2>
 
-<h2> List of Properties Currently Managed: </h2>
-
+<ul style="list-style-type: none;">
 <% @contractor.properties.each do |property|%>
+  <li>
   <%= link_to property.address, property_path(property)%>
+  </li>
   <% end %>
+</ul>
+
+</div>

@@ -1,9 +1,13 @@
-<h1> List of All Available Contractors </h1>
+<div class="text-center px-5 mx-5"> 
 
-<ul>
+<h1 style="color: white"> List of All Available Contractors </h1>
+
+<ul style="list-style-type: none;">
   <% @contractors.each do |contractor|%>
     <li>
       <%= link_to contractor.name, contractor_path(contractor)%>
     </li>
   <% end %>
 </ul>
+
+</div>

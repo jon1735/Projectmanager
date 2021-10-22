@@ -1,43 +1,47 @@
-<h1>Property Address: <%= @property.address%></h1>
+<div class="text-center px-5 mx-5">
+
+<h1 style="color: white">Property Address: <%= @property.address%></h1>
 
 <br>
 
-<h3> Vacancy: <%= @property.vacancy%> </h3>
+<h3 style="color: white"> Vacancy: <%= @property.vacancy%> </h3>
 
 <br>
 
-<h3> Realty Team Managing Property: </h3>
+<h3 style="color: white"> Realty Team Managing Property: </h3>
 
   <%= link_to @property.realtor.name, realtor_path(@property.realtor)%>
 
 <br>
 
-<h3> Contractor Team Maintaining Property: </h3>
+<h3 style="color: white"> Contractor Team Maintaining Property: </h3>
 
   <%= link_to @property.contractor.name, contractor_path(@property.contractor)%>
 
 <br>
 
-<h2> Work description:</h2>
+<h2 style="color: white"> Work description:</h2>
 
 <br>
 
-<h3>Lawn Care: <%= @property.lawn_care %></h3>
+<h3 style="color: white">Lawn Care: <%= @property.lawn_care %></h3>
 
 <br>
 
-<h3>Plumbing Work: <%= @property.plumbing %></h3>
+<h3 style="color: white">Plumbing Work: <%= @property.plumbing %></h3>
 
 <br>
 
-<h3>Electrical Work: <%= @property.electrical %></h3>
+<h3 style="color: white">Electrical Work: <%= @property.electrical %></h3>
 
 <br>
 
-<label> Update this property </label>
+<label style="color: white"> Update this property </label>
  <%= button_to "Update", edit_property_path(@property), method: :get%>
 
 <br>
 
-<label> Delete this property </label>
+<label style="color: white"> Delete this property </label>
  <%= button_to "Delete", @property, method: "delete"%>
+ 
+ </div>

@@ -1,6 +1,8 @@
-<h1> List of All Manageable Properties </h1>
+<div class="text-center px-5 mx-5"> 
 
-<ul>
+<h1 style="color: white"> List of All Manageable Properties </h1>
+
+<ul style="list-style-type: none;">
   <% @properties.each do |property|%>
     <li>
       <%= link_to property.address, property_path(property)%>
@@ -8,4 +10,6 @@
   <% end %>
 </ul>
 
-<button><%= link_to "Create a new property", new_property_path %> </button>
+<button><%= link_to "Add a new property", new_property_path %> </button>
+
+</div>

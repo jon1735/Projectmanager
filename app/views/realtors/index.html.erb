@@ -1,9 +1,11 @@
-<h1> List of Available Realtors:</h1>
+<div class="text-center px-5 mx-5">  
+<h1 style="color: white"> List of Available Realtors:</h1>
 
-<ul>
-  <% @realtors.each do |realtor|%>
-    <li>
-      <%= link_to realtor.name, realtor_path(realtor)%>
-    </li>
-  <% end %>
-</ul>
+ <ul style="list-style-type: none;">
+    <% @realtors.each do |realtor|%>
+      <li>
+        <%= link_to realtor.name, realtor_path(realtor)%>
+      </li>
+    <% end %>
+  </ul>
+</div>

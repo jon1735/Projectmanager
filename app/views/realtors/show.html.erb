@@ -1,9 +1,17 @@
-<h1><%= @realtor.name%></h1>
+<div class="text-center px-5 mx-5">  
+
+<h1 style="color: white"><%= @realtor.name%></h1>
 
 <br>
 
-<h2>List of Properties Currently Managed: </h2>
+<h2 style="color: white">List of Properties Currently Managed: </h2>
 
-<% @realtor.properties.each do |property|%>
-  <%= link_to property.address, property_path(property)%>
-  <% end %>
+ <ul style="list-style-type: none;">
+  <% @realtor.properties.each do |property|%>
+    <li>
+      <%= link_to property.address, property_path(property)%>
+      <% end %>
+    </li>
+</ul>
+
+</div>
