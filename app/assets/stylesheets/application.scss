@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ body { 
+  background-image: image-url('download.jpeg'); 
+  background-repeat: no-repeat;
+  background-size: 2000px 1000px;
+}
+
+a:hover {
+  color: purple;
+}
+
+

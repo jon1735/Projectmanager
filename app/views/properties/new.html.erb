@@ -1,13 +1,13 @@
-<h1>New Property Form</h1>
+<h1 class="text-center">New Property Form</h1>
 
 <%= form_for(@property) do |form|%>
 
-<label> Property Address: </label>
+<h6> Property Address: </h6>
   <%= form.text_area :address%>
 
 <br>
 
-<label> Is the Property Vacant? </label>
+<h6> Is the Property Vacant? </h6>
   Yes<%= form.radio_button :vacancy, true%>
   No<%= form.radio_button :vacancy, false%>
   
@@ -26,17 +26,17 @@
 
 <h3> Post inspection work list:</h3>
 
-<label> Work order for the lawn: </label>
+<h6> Work order for the lawn: </h6>
 <%= form.text_area :lawn_care%>
 
 <br>
 
-<label> Work order for the plumbing: </label>
+<h6> Work order for the plumbing: </h6>
 <%= form.text_area :plumbing%>
 
 <br>
 
-<label> Work order for the electrical: </label>
+<h6> Work order for the electrical: </h6>
 <%= form.text_area :electrical%>
 
 <br>
