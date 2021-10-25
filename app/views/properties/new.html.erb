@@ -13,9 +13,16 @@
 <br>
 
 <div class="text-center">
-<h6> Is the Property Vacant? </h6>
-  Yes<%= form.radio_button :vacancy, true%>
-  No<%= form.radio_button :vacancy, false%>
+<h6> Is the Property Vacant? </h6> 
+<table class="radio-values"> 
+  <tr> 
+    <td><%= form.label :vacancy, "Yes", value: true%></td>
+    <td><%= form.radio_button :vacancy, true%></td>
+
+     <td><%= form.label :vacancy, "No", value: false%></td>
+    <td><%= form.radio_button :vacancy, false%></td>
+  </tr>
+</table>
 </div>  
 
 <br>
@@ -60,7 +67,7 @@
 <br>
 
 <div class="text-center">
-<%= form.submit%>
+<%= form.submit class:"buttonz"%>
 </div>
 
 </main>

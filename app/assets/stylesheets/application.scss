@@ -20,10 +20,25 @@
   background-size: 2000px 1000px;
 }
 
+a {
+  color:white;
+}
+
 a:hover {
   color: purple;
 }
 
+.buttonz {
+  background-color:white;
+  color:black;
+  padding: 5px 8px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.buttonz:hover {
+  color: purple;
+}
 
 
 
