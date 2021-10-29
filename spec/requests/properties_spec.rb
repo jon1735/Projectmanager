@@ -47,8 +47,18 @@ RSpec.describe PropertiesController, type: :controller do
 
         expect(new_property).to be_present
       end
+
+      it "redirects to a different page that gets updated with the recently created info" do
+        post :create, params: valid_create_property_params
+
+        new_property = Property.find_by(lawn_care: "needs to be maintained")
+
+        expect(response).to redirect_to property_path(new_property)
+      end
     end
   end
+
+  
 end
 
 
