@@ -20,7 +20,6 @@ RSpec.describe PropertiesController, type: :controller do
 
       expect(response).to render_template(:show)
     end
-  end
 
     it "assigns @property to the correct instance" do
       property = create_property
@@ -37,12 +36,12 @@ RSpec.describe PropertiesController, type: :controller do
 
       expect(response.status).to eq 200
     end
-end
+  end
 
   describe "POST #create" do
     describe "with valid attributes" do
       it "successfully creates a new record with all params passed", :aggregate_failures do
-        expect {post properties_url, params: valid_create_property_params }.to change(Property, :count).by(1)
+        expect {post :create, params: valid_create_property_params }.to change(Property, :count).by(1)
 
         new_property = Property.find_by(lawn_care: "needs to be maintained")
 
@@ -50,6 +49,7 @@ end
       end
     end
   end
+end
 
 
 
