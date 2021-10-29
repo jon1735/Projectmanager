@@ -39,8 +39,22 @@ RSpec.describe PropertiesController, type: :controller do
     end
 end
 
+  describe "POST #create" do
+    describe "with valid attributes" do
+      it "successfully creates a new record with all params passed", :aggregate_failures do
+        expect {post properties_url, params: valid_create_property_params }.to change(Property, :count).by(1)
+
+        new_property = Property.find_by(lawn_care: "needs to be maintained")
+
+        expect(new_property).to be_present
+      end
+    end
+  end
 
 
+
+
+  
 def create_property
   property = Property.create!(
     address: "1314 astor street, norristown, PA",
@@ -69,4 +83,18 @@ def create_contractor
   plumbing: true,
   electrical: true
   )
+end
+
+def valid_create_property_params
+  {
+    property: {
+      address: "1314 astor street, norristown, PA",
+      vacancy: true,
+      lawn_care: "needs to be maintained",
+      plumbing: "needs to be maintained",
+      electrical: "needs to be maintained",
+      contractor_id: create_contractor.id,
+      realtor_id: create_realtor.id
+    }
+  }
 end
