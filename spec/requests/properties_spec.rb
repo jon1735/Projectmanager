@@ -56,55 +56,76 @@ RSpec.describe PropertiesController, type: :controller do
         expect(response).to redirect_to property_path(new_property)
       end
     end
+    
+    describe "with invalid attributes" do
+      it "fails to create a new item" do
+        expect {post :create, params: invalid_create_property_params }.to change(Property, :count).by(0)  
+        
+        expect(response).to render_template(:new)
+      end
+    end
   end
 
   
-end
-
-
-
-
   
-def create_property
-  property = Property.create!(
-    address: "1314 astor street, norristown, PA",
-    vacancy: true,
-    lawn_care: "needs to be maintained",
-    plumbing: "needs to be maintained",
-    electrical: "needs to be maintained",
-    realtor_id: create_realtor.id,
-    contractor_id: create_contractor.id
-  )
-end
-#need to do create_contractor.id because we need to call the method written down below.
-#the attribute of realtor_id didn't know where to look for the method, so we had to be
-#explicit with where we were drawing this information from. (this info pertains to lines 15-24)
-
-def create_realtor
-  realtor = Realtor.create!(
-    name: "joe johnson"
-  )
-end
-
-def create_contractor
-  contractor = Contractor.create!(
-  name: "melo property services",
-  lawn_care: true,
-  plumbing: true,
-  electrical: true
-  )
-end
-
-def valid_create_property_params
-  {
-    property: {
+  
+  
+  
+  
+  def create_property
+    property = Property.create!(
       address: "1314 astor street, norristown, PA",
       vacancy: true,
       lawn_care: "needs to be maintained",
       plumbing: "needs to be maintained",
       electrical: "needs to be maintained",
-      contractor_id: create_contractor.id,
-      realtor_id: create_realtor.id
+      realtor_id: create_realtor.id,
+      contractor_id: create_contractor.id
+    )
+  end
+  #need to do create_contractor.id because we need to call the method written down below.
+  #the attribute of realtor_id didn't know where to look for the method, so we had to be
+  #explicit with where we were drawing this information from. (this info pertains to lines 15-24)
+  
+  def create_realtor
+    realtor = Realtor.create!(
+      name: "joe johnson"
+    )
+  end
+  
+  def create_contractor
+    contractor = Contractor.create!(
+      name: "melo property services",
+      lawn_care: true,
+      plumbing: true,
+      electrical: true
+    )
+  end
+  
+  def valid_create_property_params
+    {
+      property: {
+        address: "1314 astor street, norristown, PA",
+        vacancy: true,
+        lawn_care: "needs to be maintained",
+        plumbing: "needs to be maintained",
+        electrical: "needs to be maintained",
+        contractor_id: create_contractor.id,
+        realtor_id: create_realtor.id
+      }
     }
-  }
+  end
+  
+  def invalid_create_property_params
+    {
+      property: {
+        address: "1314 astor street, norristown, PA",
+        lawn_care: "needs to be maintained",
+        plumbing: "needs to be maintained",
+        electrical: "needs to be maintained",
+        contractor_id: create_contractor.id,
+        realtor_id: create_realtor.id
+      }
+    }
+  end
 end

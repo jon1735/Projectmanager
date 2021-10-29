@@ -18,7 +18,7 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to @property
     else 
-      render :new
+      render :new, flash: { error: "sorry try creating again" }
     end
   end
 
